@@ -106,3 +106,9 @@ if (missingProduct) {
 } else {
     console.log("Product not found"); // Logs if the product is not found
 }
+
+// Applying a 15% discount to all products in the store
+ProductProperties.applyDiscount(store.inventory, 0.15); // Apply a 15% discount to all products
+
+// Displaying total inventory value after discount
+console.log(`Total Inventory Value After 15% Discount: $${store.getInventoryValue().toFixed(2)}`); // Logs total inventory value after discount
