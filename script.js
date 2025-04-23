@@ -80,32 +80,25 @@ console.log("After 10% Discount:"); // Logs products after discount
 products.forEach(product => console.log(product.toString())); // Logs each product's details
 
 // Testing the Store class
+// Creating all products
+const product1 = new ProductProperties("Milk", 0.5, 100); // Creates a product: Milk
+const product2 = new ProductProperties("Cereal", 0.3, 150); // Creates a product: Cereal
+const product3 = new ProductProperties("Eggs", 2.5, 60); // Creates a product: Eggs
+const perishable1 = new PerishableProductProperties("Strawberries", 3.5, 20, "2025-04-30"); // Creates a perishable product: Strawberries
+const perishable2 = new PerishableProductProperties("Lettuce", 1.0, 40, "2025-04-25"); // Creates a perishable product: Lettuce
+
+// Creating a new store
 const store = new Store(); // Creates a new store
 
-// Adding products to the store
+// Adding all products to the store
 store.addProduct(product1); // Adds Milk to the store
 store.addProduct(product2); // Adds Cereal to the store
+store.addProduct(product3); // Adds Eggs to the store
 store.addProduct(perishable1); // Adds Strawberries to the store
 store.addProduct(perishable2); // Adds Lettuce to the store
 
-// Displaying total inventory value
-console.log(`Total Inventory Value: $${store.getInventoryValue().toFixed(2)}`); // Logs total inventory value
-
-// Finding a product by name
-const foundProduct = store.findProductByName("Lettuce"); // Searches for Lettuce in the store
-if (foundProduct) {
-    console.log("Found Product:", foundProduct.toString()); // Logs found product details
-} else {
-    console.log("Product not found"); // Logs if the product is not found
-}
-
-// Attempting to find a non-existent product
-const missingProduct = store.findProductByName("Bread"); // Searches for Bread in the store
-if (missingProduct) {
-    console.log("Found Product:", missingProduct.toString()); // Logs found product details
-} else {
-    console.log("Product not found"); // Logs if the product is not found
-}
+// Displaying total inventory value before discount
+console.log(`Total Inventory Value Before Discount: $${store.getInventoryValue().toFixed(2)}`); // Logs total inventory value before discount
 
 // Applying a 15% discount to all products in the store
 ProductProperties.applyDiscount(store.inventory, 0.15); // Apply a 15% discount to all products
@@ -113,23 +106,11 @@ ProductProperties.applyDiscount(store.inventory, 0.15); // Apply a 15% discount 
 // Displaying total inventory value after discount
 console.log(`Total Inventory Value After 15% Discount: $${store.getInventoryValue().toFixed(2)}`); // Logs total inventory value after discount
 
-// Displaying all products in the store after the discount
-console.log("Final Inventory After 15% Discount:"); // Logs the final inventory
-store.inventory.forEach(product => console.log(product.toString())); // Logs each product's details
-
-// Adding a fifth product
-const product3 = new ProductProperties("Eggs", 2.5, 60); // Creates a product: Eggs
-
-// Adding products to the store
-store.addProduct(product1); // Adds Milk to the store
-store.addProduct(product2); // Adds Cereal to the store
-store.addProduct(perishable1); // Adds Strawberries to the store
-store.addProduct(perishable2); // Adds Lettuce to the store
-store.addProduct(product3); // Adds Eggs to the store
-
-// Displaying total inventory value
-console.log(`Total Inventory Value: $${store.getInventoryValue().toFixed(2)}`); // Logs total inventory value
-
-// Displaying all products in the store
-console.log("Final Inventory:"); // Logs the final inventory
-store.inventory.forEach(product => console.log(product.toString())); // Logs each product's details
+// Finding and printing the details of a specific product by its name
+const productNameToFind = "Cereal"; // The product name to search for
+const foundProduct = store.findProductByName(productNameToFind); // Searches for the product in the store
+if (foundProduct) {
+    console.log(`Found Product: ${foundProduct.toString()}`); // Logs the details of the found product
+} else {
+    console.log(`Product "${productNameToFind}" not found in the store.`); // Logs if the product is not found
+}
