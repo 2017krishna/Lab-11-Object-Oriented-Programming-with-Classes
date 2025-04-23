@@ -112,3 +112,7 @@ ProductProperties.applyDiscount(store.inventory, 0.15); // Apply a 15% discount 
 
 // Displaying total inventory value after discount
 console.log(`Total Inventory Value After 15% Discount: $${store.getInventoryValue().toFixed(2)}`); // Logs total inventory value after discount
+
+// Displaying all products in the store after the discount
+console.log("Final Inventory After 15% Discount:"); // Logs the final inventory
+store.inventory.forEach(product => console.log(product.toString())); // Logs each product's details
