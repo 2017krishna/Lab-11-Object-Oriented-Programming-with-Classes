@@ -31,6 +31,16 @@ class PerishableProductProperties extends ProductProperties {
     }
 }
 
+class Store {
+    constructor() {
+        this.inventory = [];
+    }
+
+    addProduct(product) {
+        this.inventory.push(product);
+    }
+}
+
 // Testing the ProductProperties class
 const product1 = new ProductProperties("Milk", 0.5, 100);
 const product2 = new ProductProperties("Cereal", 0.3, 150);
