@@ -116,3 +116,20 @@ console.log(`Total Inventory Value After 15% Discount: $${store.getInventoryValu
 // Displaying all products in the store after the discount
 console.log("Final Inventory After 15% Discount:"); // Logs the final inventory
 store.inventory.forEach(product => console.log(product.toString())); // Logs each product's details
+
+// Adding a fifth product
+const product3 = new ProductProperties("Eggs", 2.5, 60); // Creates a product: Eggs
+
+// Adding products to the store
+store.addProduct(product1); // Adds Milk to the store
+store.addProduct(product2); // Adds Cereal to the store
+store.addProduct(perishable1); // Adds Strawberries to the store
+store.addProduct(perishable2); // Adds Lettuce to the store
+store.addProduct(product3); // Adds Eggs to the store
+
+// Displaying total inventory value
+console.log(`Total Inventory Value: $${store.getInventoryValue().toFixed(2)}`); // Logs total inventory value
+
+// Displaying all products in the store
+console.log("Final Inventory:"); // Logs the final inventory
+store.inventory.forEach(product => console.log(product.toString())); // Logs each product's details
