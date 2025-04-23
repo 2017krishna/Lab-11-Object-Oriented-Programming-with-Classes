@@ -50,3 +50,13 @@ console.log(`Total Value: $${perishable1.getTotalValue().toFixed(2)}`);
 
 console.log(perishable2.toString());
 console.log(`Total Value: $${perishable2.getTotalValue().toFixed(2)}`);
+
+// Testing the applyDiscount static method
+const products = [product1, product2, perishable1, perishable2];
+console.log("Before Discount:");
+products.forEach(product => console.log(product.toString()));
+
+ProductProperties.applyDiscount(products, 0.1); // Apply a 10% discount
+
+console.log("After 10% Discount:");
+products.forEach(product => console.log(product.toString()));
