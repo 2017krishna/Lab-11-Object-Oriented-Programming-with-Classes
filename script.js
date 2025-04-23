@@ -92,9 +92,17 @@ store.addProduct(perishable2); // Adds Lettuce to the store
 console.log(`Total Inventory Value: $${store.getInventoryValue().toFixed(2)}`); // Logs total inventory value
 
 // Finding a product by name
-const foundProduct = store.findProductByName("Cereal"); // Searches for Cereal in the store
+const foundProduct = store.findProductByName("Lettuce"); // Searches for Lettuce in the store
 if (foundProduct) {
     console.log("Found Product:", foundProduct.toString()); // Logs found product details
+} else {
+    console.log("Product not found"); // Logs if the product is not found
+}
+
+// Attempting to find a non-existent product
+const missingProduct = store.findProductByName("Bread"); // Searches for Bread in the store
+if (missingProduct) {
+    console.log("Found Product:", missingProduct.toString()); // Logs found product details
 } else {
     console.log("Product not found"); // Logs if the product is not found
 }
