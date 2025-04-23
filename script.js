@@ -1,4 +1,4 @@
-class ProductProperties {
+class ProductProperties { // Class representing a generic product with properties like name, price, and quantity
     constructor(name, price, quantity) {
         this.name = name; // Name of the product
         this.price = price; // Price of the product
@@ -20,7 +20,7 @@ class ProductProperties {
     }
 }
 
-class PerishableProductProperties extends ProductProperties {
+class PerishableProductProperties extends ProductProperties { // Class representing a perishable product with an expiration date
     constructor(name, price, quantity, expirationDate) {
         super(name, price, quantity); // Calls the parent class constructor
         this.expirationDate = expirationDate; // Expiration date of the product
@@ -31,7 +31,7 @@ class PerishableProductProperties extends ProductProperties {
     }
 }
 
-class Store {
+class Store { // Class representing a store that manages an inventory of products
     constructor() {
         this.inventory = []; // Array to store products
     }
