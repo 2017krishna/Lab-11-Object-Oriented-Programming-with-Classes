@@ -49,37 +49,8 @@ class Store {
     }
 }
 
-// Testing the ProductProperties class
-const product1 = new ProductProperties("Milk", 0.5, 100); // Creates a product: Milk
-const product2 = new ProductProperties("Cereal", 0.3, 150); // Creates a product: Cereal
-
-console.log(product1.toString()); // Logs Milk details
-console.log(`Total Value: $${product1.getTotalValue().toFixed(2)}`); // Logs Milk total value
-
-console.log(product2.toString()); // Logs Cereal details
-console.log(`Total Value: $${product2.getTotalValue().toFixed(2)}`); // Logs Cereal total value
-
-// Testing the PerishableProductProperties class
-const perishable1 = new PerishableProductProperties("Strawberries", 3.5, 20, "2025-04-30"); // Creates a perishable product: Strawberries
-const perishable2 = new PerishableProductProperties("Lettuce", 1.0, 40, "2025-04-25"); // Creates a perishable product: Lettuce
-
-console.log(perishable1.toString()); // Logs Strawberries details
-console.log(`Total Value: $${perishable1.getTotalValue().toFixed(2)}`); // Logs Strawberries total value
-
-console.log(perishable2.toString()); // Logs Lettuce details
-console.log(`Total Value: $${perishable2.getTotalValue().toFixed(2)}`); // Logs Lettuce total value
-
-// Testing the applyDiscount static method
-const products = [product1, product2, perishable1, perishable2]; // Array of all products
-console.log("Before Discount:"); // Logs products before discount
-products.forEach(product => console.log(product.toString())); // Logs each product's details
-
-ProductProperties.applyDiscount(products, 0.1); // Apply a 10% discount
-
-console.log("After 10% Discount:"); // Logs products after discount
-products.forEach(product => console.log(product.toString())); // Logs each product's details
-
 // Testing the Store class
+
 // Creating all products
 const product1 = new ProductProperties("Milk", 0.5, 100); // Creates a product: Milk
 const product2 = new ProductProperties("Cereal", 0.3, 150); // Creates a product: Cereal
